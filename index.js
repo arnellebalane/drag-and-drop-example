@@ -39,11 +39,13 @@ html.addEventListener('dragstart', e => {
 const dropzone = document.querySelector('.dropzone');
 
 dropzone.addEventListener('dragenter', e => {
-    e.target.classList.add('dragover');
+    dropzone.classList.add('dragover');
 });
 
 dropzone.addEventListener('dragleave', e => {
-    e.target.classList.remove('dragover');
+    if (e.target === dropzone) {
+        dropzone.classList.remove('dragover');
+    }
 });
 
 dropzone.addEventListener('dragover', e => {
@@ -55,9 +57,31 @@ dropzone.addEventListener('drop', e => {
     e.target.classList.remove('dragover');
 
     const transfer = e.dataTransfer;
+    dropzone.innerHTML = '';
 
-    for (let i = 0; i < transfer.items.length; i++) {
-        const type = transfer.items[i].type;
-        console.log(transfer.getData(type));
+    if (transfer.types.includes('text/plain')) {
+        logDropData(dropzone, 'text', transfer.getData('text/plain'));
     }
+    if (transfer.types.includes('text/uri-list')) {
+        logDropData(dropzone, 'url', transfer.getData('text/uri-list'));
+    }
+    if (transfer.types.includes('text/html')) {
+        logDropData(dropzone, 'html', transfer.getData('text/html'));
+    }
+
+    e.dataTransfer.items.clear();
 });
+
+function logDropData(dropzone, type, data) {
+    const h3 = document.createElement('h3');
+    h3.textContent = type;
+
+    const p = document.createElement('p');
+    p.textContent = data;
+
+    const div = document.createElement('div');
+    div.appendChild(h3);
+    div.appendChild(p);
+
+    dropzone.appendChild(div);
+}

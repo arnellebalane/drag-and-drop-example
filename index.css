@@ -96,6 +96,7 @@ section h2 {
 
 .dropzone {
     flex-grow: 1;
+    overflow: auto;
     transition: 300ms ease;
     transition-property: border-color, background-color;
 }
@@ -103,4 +104,27 @@ section h2 {
 .dropzone.dragover {
     border-color: #ffc107;
     background-color: #fffde7;
+}
+
+.dropzone div {
+    text-align: left;
+}
+
+.dropzone div:not(:first-child) {
+    margin-top: 16px;
+}
+
+.dropzone div:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.dropzone h3 {
+    margin: 0;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.dropzone p {
+    margin: 0;
+    font-size: 14px;
 }
