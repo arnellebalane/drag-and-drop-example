@@ -58,9 +58,15 @@ section h2 {
     border: 1px solid #e0e0e0;
     border-radius: 3px;
     background-color: #fff;
+    cursor: pointer;
     box-shadow:
         0 15px 35px rgba(40, 40, 40, 0.1),
         0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: opacity 300ms ease;
+}
+
+.card.dragging {
+    opacity: 0.25;
 }
 
 .card.dropzone {
@@ -90,4 +96,11 @@ section h2 {
 
 .dropzone {
     flex-grow: 1;
+    transition: 300ms ease;
+    transition-property: border-color, background-color;
+}
+
+.dropzone.dragover {
+    border-color: #ffc107;
+    background-color: #fffde7;
 }
