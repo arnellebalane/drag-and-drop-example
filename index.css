@@ -1,0 +1,93 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    padding: 50px;
+    margin: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #333;
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90vw;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+header a {
+    font-size: 14px;
+    color: #888;
+}
+
+section {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 10px;
+}
+
+section h2 {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.card {
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow:
+        0 15px 35px rgba(40, 40, 40, 0.1),
+        0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.card.dropzone {
+    border: 2px dotted #e0e0e0;
+}
+
+.card:not(:first-child) {
+    margin-top: 10px;
+}
+
+.card:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.card img {
+    display: block;
+    max-width: 100%;
+}
+
+.card p:first-child {
+    margin-top: 0;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
+
+.dropzone {
+    flex-grow: 1;
+}
