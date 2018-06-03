@@ -4,7 +4,7 @@ Demo application showcasing the capabilities of the [Drag and Drop API][1].
 
 [See live demo][2].
 
-![Demo][demo.gif]
+![Demo](demo.gif)
 
 
 ## Running this project
