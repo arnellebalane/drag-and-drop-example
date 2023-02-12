@@ -21,6 +21,6 @@ $ python -m SimpleHTTPServer
 - [Custom Drag Image Example][3] ([live demo][4])
 
 [1]: https://developer.mozilla.org/en-US/docs/Web/API/HTML_Drag_and_Drop_API
-[2]: https://drag-and-drop-example.arnelle.me
+[2]: https://drag-and-drop-example.arnelle.dev
 [3]: https://github.com/arnellebalane/custom-drag-image-example
-[4]: https://custom-drag-image-example.arnelle.me/
+[4]: https://custom-drag-image-example.arnelle.dev
